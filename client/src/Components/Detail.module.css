@@ -1,0 +1,41 @@
+.contariner{
+    display: flex;
+}
+
+.name{
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    font-size: 86px;
+    margin: 11px;
+    margin-left: 422px;
+}
+
+.image {
+    border-radius: 20px;
+    position: absolute;
+    margin: 0px;
+    display: flex;
+    width: 420px;
+    height: 380px;
+    object-fit: cover;
+}
+
+.props{
+    display: flex;
+    flex-direction: column;
+    margin-left: -64px;
+}
+
+.h2{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    margin-left: 596px;
+    margin-block: -17px;
+    align-items: center;
+}
+.h3{
+    display: flex;
+    margin-left: 596px;
+}

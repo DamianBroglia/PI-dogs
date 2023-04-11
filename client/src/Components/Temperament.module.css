@@ -1,0 +1,31 @@
+.button {
+    display: flex;
+    width: 200px;
+    height: 89px;
+    border: none;
+    margin: 11px;
+    background-color: rgba(7, 153, 182, .5);
+    /* margin-inline: 4px; */
+    padding: 30px;
+    /* padding-inline: 59px; */
+    border-radius: 19px;
+    font-size: 21px;
+    font-family: sans-serif;
+    /* font-optical-sizing: auto;*/
+    color: aliceblue;
+}
+
+.button:hover{
+    background-color: rgba(7, 153, 182, 1);
+    font-size: 25px;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* width: 445px; */
+    margin-inline: 14px;
+    margin-top: 32px;
+}

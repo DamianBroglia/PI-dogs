@@ -1,0 +1,27 @@
+.container{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 532px;
+}
+
+.search{
+    display:flex;
+    width: 120px;
+    margin-left: 0px
+}
+
+.button{
+    background-color: rgb(7, 153, 182);
+    margin-inline: 6px;
+    border: none;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.button:hover{
+    background: rgba(33, 188, 199, 1);
+    color: black;
+}

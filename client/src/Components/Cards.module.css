@@ -1,0 +1,13 @@
+.cards{
+    display: flex;
+    align-items: baseline;
+    margin: 50px;
+    width: 1124px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.msj{
+    font-size: 25px;
+margin-top: 30px;
+}

@@ -1,0 +1,129 @@
+.card {
+    position: relative;
+    background: rgb(7,135,182);
+    width: 542px;
+    height: 236px;
+    border-radius: 25px;
+    margin: 10px;
+
+}
+
+.card:hover {
+    box-shadow: 0px 0px 9px 4px rgba(255, 255, 255, 0.6);
+   
+}
+
+.closeBt {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    background: rgba(33, 188, 199, 0.6);
+    border: none;
+    border-radius: 100%;
+}
+
+.closeBt:hover {
+    background: rgba(33, 188, 199, 1);
+}
+
+.name {
+    position: relative;
+    margin: 25px;
+    margin-left: 243px;
+    font-size: 34px;
+    padding-inline-end: 0px;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    text-decoration:none;
+}
+
+.image {
+    border-radius: 20px;
+    position: absolute;
+    margin: 24px;
+    display: flex;
+    width: 210px;
+    height: 189px;
+    object-fit: cover;
+}
+
+.data {
+    display: flex;
+    color: white;
+    position: relative; 
+    left: 259px;
+    font-size: 22px;
+
+}
+
+.data2 {
+    display: flex;
+    color: white;
+    position: absolute;
+    top: 182px;
+    left: 359px;
+    font-size: 22px;
+
+}
+
+.favorito {
+    display: flex;
+    position: absolute;
+    top: 179px;
+    background: rgba(100, 100, 100, 0);
+    border: none;
+    font-size: 38px;
+}
+
+.favorito:hover{
+    font-size: 42px;
+}
+
+.divMay{
+    display: flex;
+    flex-direction: row;
+    margin-left: 239px;
+    position: relative;
+    top: -29px;
+}
+
+.divMed{
+   margin-inline: 6px;
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background-color: rgb(17, 76, 95);
+    align-items: center;
+    width: 111px;
+    height: 53px;
+    object-fit: cover;
+}
+
+.label{
+    display: flex;
+    color: antiquewhite;
+    font-size: 15px;
+    position: relative;
+    margin-top: -12px;
+}
+
+.label2{
+    display: flex;
+    font-size: 34px;
+    position: relative;
+    margin-top: -7px;
+    color: aliceblue;
+}
+
+.label3{
+    display: flex;
+    font-size: 12px;
+    color: antiquewhite;
+    position: relative;
+    margin-top: -4px;
+}

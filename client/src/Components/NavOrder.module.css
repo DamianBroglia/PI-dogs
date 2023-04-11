@@ -1,0 +1,18 @@
+.div{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    background-color: rgb(17, 76, 95);
+    margin-inline: 125px;
+    border-radius: 9px;
+}
+
+.button{
+    display: flex;
+    margin-inline: 15px;
+    background-color: rgb(7, 153, 182);
+    border: none;
+    margin-block: 4px;
+    border-radius: 8px;
+    color: antiquewhite;
+}

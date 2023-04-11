@@ -1,0 +1,51 @@
+.nav {
+    display: flex;
+    background-color: rgb(17,76,95);    
+    align-items: center;
+    margin-top: 7px;
+    margin-inline: 28px;
+    border-radius: 11px;
+    height: 31px;
+}
+
+.container {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    margin-inline: 39px;
+}
+
+.div {
+    display: flex;
+}
+
+
+
+.titulo {
+    display: flex;
+    align-items: center;
+    margin-inline: 11px;
+    color: aliceblue;
+}
+
+.search {
+    display: flex;
+}
+
+.inputTex {
+    display: flex;
+    width: 28px;
+    margin-inline: 5px;
+    border-radius: 2px;
+    border: none;
+    margin-block: 5px;
+}
+
+.button {
+    display: flex;
+    background-color: rgb(7, 153, 182);
+    border: none;
+    color: white;
+    height: 23px;
+    border-radius: 5px;
+}

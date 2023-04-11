@@ -1,0 +1,57 @@
+.divMay{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.divMed{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(2, 61, 79);
+    border-radius: 13px;
+    margin-top: 8px;
+    height: 67px;
+}
+.divMen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-inline: 12px;
+    background-color: rgb(7, 153, 182);
+    padding-inline: 30px;
+    border-radius: 15px;
+    height: 51px;
+    width: 36px;
+    border-radius: 15px;
+    
+}
+.button{
+    background: bottom;
+    display: flex;
+    width: 92px;
+    height: 51px;
+    position: relative;
+    margin-left: 144px;
+    margin-top: -59px;
+    border-radius: 13px;
+    border: none;
+}
+.name{
+    display: flex;
+    color: antiquewhite;
+}
+.label{
+    display: flex;
+    color: antiquewhite;
+}
+.h2{
+    display: flex;
+    position: absolute;
+    font-size: 30px;
+    color: antiquewhite;
+    top: 99px;
+}
+.div3{
+    display: flex;
+    margin-left: -145px;
+}

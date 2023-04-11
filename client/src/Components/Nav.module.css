@@ -1,0 +1,73 @@
+.nav {
+    background-color: rgb(17, 76, 95);
+    display: flex;
+    border-radius: 13px;
+}
+
+.label {
+    position: relative;
+    margin-inline-start: 3px;
+    margin-block-start: -4px;
+    color: rgb(242, 230, 207);
+    font-size: 32px;
+}
+
+.label2 {
+    color: rgb(0 0 0);
+    position: relative;
+    font-size: 28px;
+    margin-left: -60px;
+    margin-bottom: 0px;
+}
+
+.image {
+    position: relative;
+    width: 68px;
+    margin-inline-start: 5px
+    
+}
+
+.button{
+    background-color: rgb(7, 153, 182);
+    margin-inline: 3px;
+    border: none;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    margin-inline: 20px;
+    width: 0px;
+}
+
+.user{
+    background-color: rgb(2, 61, 79);
+    display: flex;
+    align-items: center;
+    border-radius: 14px;
+    margin-left: 17px;
+    padding-inline: 11px;
+    margin-top: 10px;
+    height: 48px;
+    flex-direction: row-reverse;
+}
+
+.name{
+    display: flex;
+    color: antiquewhite;
+    margin-right: 17px;
+}
+
+.button2{
+    background-color: rgb(7, 153, 182);
+    margin-inline: 3px;
+    border: none;
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 12px;
+}
