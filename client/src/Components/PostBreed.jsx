@@ -11,8 +11,8 @@ export default function PostBreed() {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const [breedCreated, setBreedCreated] = useState({
-        userId: user.id, name: "", image: "", height: "", weight: "", lifeSpan: "",
-        origin: "", breedGroup: "", temperament: []
+        userId: user.id, name: " ", image: " ", height: " ", weight: " ", lifeSpan: " ",
+        origin: " ", breedGroup: " ", temperament: []
     })
     const [temper, setTemper] = useState([])
     const [temName, setTemName] = useState([])
@@ -36,22 +36,22 @@ export default function PostBreed() {
     function handleInputChange(e) {
         const { name, value } = e.target
         if (name === "temperament") {
-            if (temName.length < 6) {
+            if (temName.length < 5) {
                 const exists = temName.find(e => e === value)
                 if (!exists) {
-                    setBreedCreated({
-                        ...breedCreated,
-                        temperament: [...breedCreated.temperament, value]
-                    })                    
                     setTemName([
                         ...temName, value
                     ])
-                    console.log("2222222222222222222222", breedCreated.temperament);
-                    console.log("2222222222222222222222333", e);
                 }
             } else {
                 alert("No puedes asignar mas de 5 temperamentos a tu raza")
             }
+        }
+        if (name === "lifeSpan") {
+            setBreedCreated({
+                ...breedCreated,
+                [name]: value + " years"
+            })
         } else {
             setBreedCreated({
                 ...breedCreated,
@@ -63,12 +63,27 @@ export default function PostBreed() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        if (breedCreated.name && breedCreated.image
-            && breedCreated.height && breedCreated.weight
-            && breedCreated.lifeSpan && breedCreated.origin
-            && breedCreated.breedGroup && breedCreated.temperament.length > 0) {
-            dispatch(postBreed(breedCreated))
-            navigate('/postBreed/creasteRaza')
+        setBreedCreated({
+            ...breedCreated,
+            temperament: temName
+        })
+        const complete = Object.values(breedCreated)
+        const isComplet = complete.filter(e => e === " ")
+        if (isComplet.length === 0) {
+            if (breedCreated.height.split("-").length === 2 &&
+                breedCreated.weight.split("-").length === 2 &&
+                breedCreated.lifeSpan.split("-").length === 2) {
+                if (breedCreated.height.split("-")[0] < breedCreated.height.split("-")[1] &&
+                    breedCreated.weight.split("-")[0] < breedCreated.weight.split("-")[1] &&
+                    breedCreated.lifeSpan.split("-")[0] < breedCreated.lifeSpan.split("-")[1]) {
+                    dispatch(postBreed(breedCreated))
+                    navigate('/postBreed/creasteRaza')
+                } else {
+                    alert("El minimo no puede ser mayor o igual que el maximo")
+                }
+            } else {
+                alert("Altura, Peso y Esperanza de vida deben ser dos valores separados por un " - " ; ej 10-34")
+            }
         } else {
             alert("Faltan completar cuadros")
         }
@@ -93,19 +108,19 @@ export default function PostBreed() {
                     </div>
                     <div className={styles.containerMenor}>
                         <label className={styles.label}>Altura: </label>
-                        <input className={styles.input} type="text" name="height" placeholder="Altura"
+                        <input className={styles.input} placeholder="Altura minima - Edad minima" type="text" name="height"
                             onChange={(e) => handleInputChange(e)}></input>
 
                     </div>
                     <div className={styles.containerMenor}>
                         <label className={styles.label}>Peso: </label>
-                        <input className={styles.input} type="text" name="weight" placeholder="Peso"
+                        <input className={styles.input} placeholder="Peso minimo - Peso maximo" type="text" name="weight"
                             onChange={(e) => handleInputChange(e)}></input>
 
                     </div>
                     <div className={styles.containerMenor}>
                         <label className={styles.label}>Esperanza de Vida: </label>
-                        <input className={styles.input} type="text" name="lifeSpan" placeholder="Esperanza de Vida"
+                        <input className={styles.input} placeholder="Edad minima - Edad maxima" type="text" name="lifeSpan"
                             onChange={(e) => handleInputChange(e)}></input>
 
                     </div>
@@ -129,23 +144,23 @@ export default function PostBreed() {
                             <option value="Herding">Herding</option>
                         </select>
                     </div>
-                    <div>
-                        <label className={styles.label}>Temperamentos</label>
-                        <select name="temperament" defaultValue={"DEFAULT"} onChange={(e) => handleInputChange(e)}>
-                            {temper.map(tem =>
-                                <option key={tem.id} name={tem.name} value={tem.id}>{tem.name}</option>
 
-                            )}
-                        </select>
-                        <div className={styles.divTemper}>
-                           { temName.map ((el) => 
-                                   <p className={styles.tempeName}>{temper[el].name}</p>
-                           )}
-                        </div>
+                    <label className={styles.label}>Temperamentos</label>
+                    <select name="temperament" defaultValue={"DEFAULT"} onChange={(e) => handleInputChange(e)}>
+                        {temper.map(tem =>
+                            <option key={tem.id} name={tem.name} value={tem.id}>{tem.name}</option>
+
+                        )}
+                    </select>
+                    <div className={styles.divTemper}>
+                        {temName.map((el) =>
+                            <p className={styles.tempeName}>{temper[el - 1].name}</p>
+                        )}
                     </div>
-                    <div>
-                        <button className={styles.button} type="sudmit" >Crear Raza</button>
-                    </div>
+
+
+                    <button className={styles.button} type="sudmit" >Crear Raza</button>
+
                 </div>
             </form>
         </div>

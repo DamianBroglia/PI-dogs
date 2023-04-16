@@ -16,10 +16,10 @@ const postDog = async (req, res) => {
             res.status(404).end(`La raza ${exists.name} ya existe`)
         } else {
             let id = Number(allBreed[allBreed.length - 1].id) + 1
-            const user = await User.findByPk(userId)
-            user.created = [...user.created, id]
-            await user.save()
-            obj = { id, image, name, height, weight, lifeSpan, origin, breedGroup }
+            // const user = await User.findByPk(userId)
+            // user.created = [...user.created, id]
+            // await user.save()
+            obj = {userId, id, image, name, height, weight, lifeSpan, origin, breedGroup }
             const newDog = await Dog.create(obj)
             await newDog.addTemperaments(temperament)
             res.status(200).json(obj)

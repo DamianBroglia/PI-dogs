@@ -4,7 +4,8 @@ import {
     FILTER_BY_NAME, GET_ALL_BREED, POST_BREED, FILTER_BY_BREEDGROUP,
     POST_USER, GET_USER, FILTER_BY_HEIGHT, FILTER_BY_LIFE_SPAN, FILTER_BY_ORIGIN,
     FILTER_BY_WEIGHT, ORDER_BY_HEIGHT, ORDER_BY_WEIGHT, ORDER_BY_LIFE_SPAN, ORDER_BY_HEIGHT_REV,
-    ORDER_BY_WEIGHT_REV, ORDER_BY_LIFE_SPAN_REV, PUT_USER, GET_FAV, GET_CREATED, FILTER_BY_TEMPERAMENTS
+    ORDER_BY_WEIGHT_REV, ORDER_BY_LIFE_SPAN_REV, PUT_USER, GET_FAV, GET_CREATED,
+    FILTER_BY_TEMPERAMENTS, CLEAR_CREATED, CLEAR_FAVORITE, CLEAR_USER
 } from './action_type';
 
 export function getAllBreed() {
@@ -27,13 +28,13 @@ export function postBreed(createDog) {
         try {
             const allDogs = await axios(`http://localhost:3001/dogs`)
             const exists = allDogs.data.find(e => e.name === createDog.name)
-            if(!exists){
+            if (!exists) {
                 const breed = await axios.post(`http://localhost:3001/dog`, createDog)
                 dispatch({
                     type: POST_BREED,
                     payload: breed.data
                 })
-            }else{
+            } else {
                 alert(`Ya existe una raza de nombre ${createDog.name}`)
             }
         } catch (error) {
@@ -45,27 +46,28 @@ export function postBreed(createDog) {
 export function filterByName(name) {
     return async function (dispatch) {
         try {
-            if(name.length > 0){
+            let array = []
+            if (name.length > 0) {
                 const filtrado = await axios(`http://localhost:3001/dogs/name?name=${name}`)
-                const filter = await axios(`http://localhost:3001/dogs/${filtrado.data.id}`)
-                let array = []
-                array.push(filter.data)
-                if(array.length > 0){
+                if (filtrado) {
+                    const filter = await axios(`http://localhost:3001/dogs/${filtrado.data.id}`)       
+                    array.push(filter.data)
                     dispatch({
                         type: FILTER_BY_NAME,
                         payload: array
                     })
-                }else{
+
+                } else {
                     const obj = {
-                        key:0,
-                        id:0,
-                        image:"https://c8.alamy.com/compes/2ce2cr8/signo-de-interrogacion-perro-2ce2cr8.jpg",
-                        name:"No hay raza con este nombre",
-                        height:"???",
-                        weight:"???",
-                        lifeSpan:"???",
-                        origin:"???",
-                        breedGroup:"???"
+                        key: 0,
+                        id: 0,
+                        image: "https://c8.alamy.com/compes/2ce2cr8/signo-de-interrogacion-perro-2ce2cr8.jpg",
+                        name: "No hay raza con este nombre",
+                        height: "???",
+                        weight: "???",
+                        lifeSpan: "???",
+                        origin: "???",
+                        breedGroup: "???"
                     }
                     array.push(obj)
                     dispatch({
@@ -73,11 +75,13 @@ export function filterByName(name) {
                         payload: array
                     })
                 }
-            }else{
+            } else {
                 alert("Debes colocar el nombre de la raza")
             }
         } catch (error) {
-            console.log(error);
+            if (error.message === "Not Found") {
+                alert("No hay Razas con ese nombre")
+            }
         }
     };
 }
@@ -239,6 +243,26 @@ export function getUser(user) {
     }
 }
 
+export function clearFavorite() {
+    return {
+        type: CLEAR_FAVORITE,
+    }
+
+}
+
+export function clearCreated() {
+    return {
+        type: CLEAR_CREATED,
+    }
+
+}
+
+export function clearUser() {
+    return {
+        type: CLEAR_USER,
+    }
+
+}
 
 
 

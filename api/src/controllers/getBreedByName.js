@@ -17,13 +17,25 @@ const getBreedByName = async (req, res) => {
                     const dogBreed = result.data
                     res.status(200).json({ id: dogBreed[0].id })
                 } else {
-                    res.status(404).end("No existe raza con dicho nombre")
+                    const obj = {
+                        key: 0,
+                        id: 0,
+                        image: "https://c8.alamy.com/compes/2ce2cr8/signo-de-interrogacion-perro-2ce2cr8.jpg",
+                        name: "No hay raza con este nombre",
+                        height: "???",
+                        weight: "???",
+                        lifeSpan: "???",
+                        origin: "???",
+                        breedGroup: "???"
+                    }
+                    res.status(404).json(obj)
                 }
             }
         } else {
             res.status(400).end("Debes escribir el nombre de la raza")
         }
     } catch (error) {
+        
         res.status(500).end(error.message)
     }
 }

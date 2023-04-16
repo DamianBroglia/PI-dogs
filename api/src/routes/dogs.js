@@ -18,6 +18,5 @@ router.get("/temperament", getTemperament)
 router.get("/user", getUser)
 router.post("/user", postUser)
 router.put("/user/:userId/:favId/:addOrDel", putUser)
-// router.post("/skills/:idRaza/:idUser", postSkills)
-// router.get("/skills/:idRaza", getSkills)
+
 module.exports = router;

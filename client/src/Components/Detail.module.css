@@ -6,9 +6,12 @@
     position: relative;
     display: flex;
     flex-direction: column-reverse;
-    font-size: 86px;
+    font-size: 37px;
     margin: 11px;
-    margin-left: 422px;
+    margin-left: 430px;
+    background: bisque;
+    border-radius: 5px;
+    padding-block: 5px;
 }
 
 .image {
@@ -24,18 +27,35 @@
 .props{
     display: flex;
     flex-direction: column;
-    margin-left: -64px;
+    align-items: center;
+    margin-left: 430px;
+    padding-top: 20px;
+    margin-right: 13px;
+    border-radius: 5px;
+    background-color: rgb(26 50 58);
+    height: 287px;
 }
+
 
 .h2{
     display: flex;
-    position: relative;
-    flex-direction: row;
-    margin-left: 596px;
-    margin-block: -17px;
+    font-size: 17px;
     align-items: center;
+    margin-block: -16px;
+    color: antiquewhite;
+
 }
-.h3{
+.div{
     display: flex;
-    margin-left: 596px;
+    margin-left: 430px;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: aqua;
+    height: 307px;
+}
+
+.p{
+    font-size: 20px;
+    margin-right: 12px;
+    color: antiquewhite;
 }

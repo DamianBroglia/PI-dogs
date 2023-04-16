@@ -7,17 +7,18 @@ import { useNavigate } from "react-router-dom"
 export default function FilterByGroup({ filterByBreedGroup }) {
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const [breedGroup, setBreedGroup] = useState("")
+    const [breedGroup, setBreedGroup] = useState(" ")
 
-    function handleClick(e) {
-        setBreedGroup(e.target.value)
+
+    function handleClick(e) {        
+            setBreedGroup(e.target.value)       
     }
+
     return (
         <form className={styles.container} onSubmit={(e) => {
-            e.preventDefault();      
-                dispatch(filterByBreedGroup(breedGroup))
-                setBreedGroup("")
-                navigate("/filter")
+            e.preventDefault();
+            dispatch(filterByBreedGroup(breedGroup))
+            navigate("/filter")
         }}>
             <select className={styles.search} name="breedGroup" defaultValue={"DEFAULT"} onChange={handleClick}>
                 <option value="DEFAULT" disabled >Grupo de Raza</option>
@@ -26,7 +27,7 @@ export default function FilterByGroup({ filterByBreedGroup }) {
                 <option value="Terrier">Terrier</option>
                 <option value="Working" >Working </option>
                 <option value="Mixed">Mixed</option>
-                <option value="Non-sporting">Non-sporting</option>
+                <option value="Non-Sporting">Non-sporting</option>
                 <option value="Sporting">Sporting</option>
                 <option value="Herding">Herding</option>
             </select>

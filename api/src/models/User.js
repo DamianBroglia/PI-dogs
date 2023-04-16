@@ -26,9 +26,6 @@ module.exports = (sequelize) => {
     favorites: {
       type: DataTypes.ARRAY(DataTypes.STRING)
     },
-    created: {
-      type: DataTypes.ARRAY(DataTypes.STRING)
-    }
   },
     { timestamps: false }
   );

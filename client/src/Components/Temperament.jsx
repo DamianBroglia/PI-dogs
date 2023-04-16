@@ -1,7 +1,6 @@
-import { useState } from "react";
-import { useEffect } from "react";
+
+import { useEffect, useState } from "react";
 import styles from "./Temperament.module.css"
-import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { filterByTemperament } from "../Redux/actions";
 import { useNavigate } from "react-router-dom";
@@ -9,9 +8,9 @@ import { useNavigate } from "react-router-dom";
 
 export default function Temperament() {
     const [temperament, setTemperament] = useState([])
-    const [firtInPage, setFirtInPage] = useState(0)
+    const [firstInPage, setFirtInPage] = useState(0)
     const [lastInPage, setLastInPage] = useState(20)
-    const allBreed = useSelector(state => state.breedDogs)
+    const [numPag, setNumPage] = useState(1)
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
@@ -31,13 +30,17 @@ export default function Temperament() {
     }, []);
 
     function handleNext() {
-        setFirtInPage(firtInPage + 20)
+        if(firstInPage > temperament.length) return
+        setFirtInPage(firstInPage + 20)
         setLastInPage(lastInPage + 20)
+        setNumPage(numPag + 1)
     }
 
     function handlePrev() {
-        setFirtInPage(firtInPage - 20)
+        if(firstInPage <= 0) return
+        setFirtInPage(firstInPage - 20)
         setLastInPage(lastInPage - 20)
+        setNumPage(numPag - 1)
     }
 
     function handleOnClick(e) {
@@ -49,14 +52,15 @@ export default function Temperament() {
     return (
 
         <div className={styles.container}>
-            {temperament.slice(firtInPage, lastInPage).map((t) =>
+            {temperament.slice(firstInPage, lastInPage).map((t) =>
                 <div key={t.id}>
                     <button name={t.name} onClick={(e) => handleOnClick(e)} className={styles.button}>{t.name}</button>
                 </div>
             )}
-            <div>
-                <button onClick={handlePrev}>Prev</button>
-                <button onClick={handleNext}>Next</button>
+            <div className={styles.page}>
+                <button className={styles.nextPrev} onClick={handlePrev}>Prev</button>
+                <p className={styles.numPage}>{numPag}</p>
+                <button className={styles.nextPrev} onClick={handleNext}>Next</button>
             </div>
         </div >
     )

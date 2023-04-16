@@ -1,6 +1,6 @@
 import styles from "./Card.module.css"
 import { Link } from "react-router-dom"
-import { getFav, putUser } from "../Redux/actions"
+import { putUser } from "../Redux/actions"
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -20,7 +20,7 @@ export default function Card(props) {
             setIsFav(true)
          }
       })
-   }, []);
+   }, [favorit]);
 
 
 

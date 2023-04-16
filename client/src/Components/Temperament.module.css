@@ -4,7 +4,7 @@
     height: 89px;
     border: none;
     margin: 11px;
-    background-color: rgba(7, 153, 182, .5);
+    background-color: rgba(26, 50, 58, .8);
     /* margin-inline: 4px; */
     padding: 30px;
     /* padding-inline: 59px; */
@@ -28,4 +28,36 @@
     /* width: 445px; */
     margin-inline: 14px;
     margin-top: 32px;
+}
+
+.nextPrev{
+    display: flex;
+    background-color: rgb(26 50 58);
+    border: none;
+    color: white;
+    height: 23px;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.numPag{
+    display: flex;
+    margin-inline: 4px;
+    font-size: 16px;
+    background-color: rgb(26 50 58);
+    font-family: fantasy;
+    padding-inline: 8px;
+    height: 23px;
+    border-radius: 5px;
+    align-items: center;
+    color:antiquewhite
+}
+
+.page{
+    display: flex;
+    align-items: center;
+    background-color: rgb(10 82 96);
+    padding-inline: 7px;
+    border-radius: 7px;
+    height: 36px;
 }

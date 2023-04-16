@@ -1,0 +1,32 @@
+.animation {
+    display: flex;
+    margin-left: 500px;
+    color: black;
+    font-size: 24px;
+    margin-top: 150px;
+}
+
+.barraCarga {
+    display: flex;
+    animation-name: barra;
+    animation-duration: 1.5s;
+    margin-left: 500px;
+    background-color: black;
+}
+
+@keyframes barra {
+    0% {
+        height: 10px;
+        width: 0px;
+        background-color: darkred;
+        box-shadow: 0px, 0px, white, 8%;
+        
+    }
+
+    100% {
+        height: 10px;
+        width: 200px;
+        background-color: darkgreen;
+        box-shadow: -10px, -10px, white, 8%;
+    }
+}

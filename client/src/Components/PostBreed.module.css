@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: column;
     margin-block: 22px;
-   background-color: rgb(2, 61, 79);
+    background-color: rgb(20 43 50);
     align-items: center;
     border-radius: 51px;
     padding-inline: 60px;
@@ -36,19 +36,23 @@
 }
 
 .button{
-    background-color: rgb(7, 153, 182);
+    background-color: rgb(10 82 96);
     margin-inline: 3px;
     border: none;
-    width: 70px;
+    width: 85px;
+    margin-top: 46px;
     height: 30px;
     border-radius: 5px;
-    font-size: 12px;
 }
+.button:hover{
+    box-shadow: 0px 0px 9px 4px rgba(255, 255, 255, 0.6);
+}
+
 
 .tempeName {
     display: flex;
     margin-inline: 3px;
-    font-size: 12px;
+    font-size: 10px;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -59,4 +63,5 @@
     margin-top: -7px;
     justify-content: center;
     flex-wrap: wrap;
+    height: 0px;
 }

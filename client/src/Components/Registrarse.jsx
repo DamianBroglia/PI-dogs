@@ -8,7 +8,7 @@ import styles from "./LoginForm.module.css"
 export default function Registrarse({ postUser }) {
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const [userData, setUserData] = useState({ username: "", email: '', password: '', favorites:[], created: [] });
+    const [userData, setUserData] = useState({ username: "", email: '', password: '', favorites:[], created:[] });
     const [errors, setErrors] = useState({ username: "", email: '', password: '' });
     function handleInputChange(e) {
         setUserData({
@@ -21,20 +21,21 @@ export default function Registrarse({ postUser }) {
         }))
     }
     function handleSubmit(e) {
+        e.preventDefault()
         const errores = Object.values(errors)
         if (errores.length > 0) {
             if (errors.username) {
                 alert(errors.username)
             }
-            if (errors.email) {
+            else if (errors.email) {
                 alert(errors.email)
             }
-            if (errors.password) {
+            else if (errors.password) {
                 alert(errors.password)
             }
             
         } else {
-            e.preventDefault()
+            
             dispatch(postUser(userData))
             alert("Bienvenido a la app de dogs")
             navigate("/home")

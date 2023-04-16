@@ -11,7 +11,16 @@
     border-radius: 13px;
     margin-top: 8px;
     height: 67px;
+    animation-name: perfil;
+    animation-duration: 3s;
+    animation-timing-function: ease;
 }
+
+@keyframes perfil {
+0% {width: 0%;}
+100% {width: 29%;}
+}
+
 .divMen{
     display: flex;
     flex-direction: column;
@@ -31,7 +40,7 @@
     width: 92px;
     height: 51px;
     position: relative;
-    margin-left: 144px;
+    margin-left: 89px;
     margin-top: -59px;
     border-radius: 13px;
     border: none;
@@ -49,9 +58,9 @@
     position: absolute;
     font-size: 30px;
     color: antiquewhite;
-    top: 99px;
+    top: 79px;
 }
 .div3{
     display: flex;
-    margin-left: -145px;
+    margin-left: -90px;
 }

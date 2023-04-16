@@ -5,9 +5,42 @@
     width: 1124px;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 4px;
 }
 
 .msj{
     font-size: 25px;
 margin-top: 30px;
+}
+
+.nextPrev{
+    display: flex;
+    background-color: rgb(26 50 58);
+    border: none;
+    color: white;
+    height: 23px;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.numPag{
+    display: flex;
+    margin-inline: 4px;
+    font-size: 16px;
+    background-color: rgb(26 50 58);
+    font-family: fantasy;
+    padding-inline: 8px;
+    height: 23px;
+    border-radius: 5px;
+    align-items: center;
+    color:antiquewhite
+}
+
+.page{
+    display: flex;
+    align-items: center;
+    background-color: rgb(10 82 96);
+    padding-inline: 7px;
+    border-radius: 7px;
+    height: 36px;
 }

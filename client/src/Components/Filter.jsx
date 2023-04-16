@@ -7,7 +7,7 @@ export default function Filter() {
 
     return (
         <div>
-            <Cards cardArr={breeds} />
+            {breeds.length > 0 ? <Cards cardArr={breeds} />: <h2> No hay resultados con esos parametros</h2>}
         </div>
     )
 }

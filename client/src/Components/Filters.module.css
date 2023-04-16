@@ -1,11 +1,11 @@
 .nav {
     display: flex;
-    background-color: rgb(17,76,95);    
+    background-color: rgb(26 50 58);
     align-items: center;
-    margin-top: 7px;
+    margin-top: 4px;
     margin-inline: 28px;
     border-radius: 11px;
-    height: 31px;
+    height: 43px;
 }
 
 .container {
@@ -30,6 +30,7 @@
 
 .search {
     display: flex;
+    margin-right: 13px;
 }
 
 .inputTex {
@@ -43,9 +44,10 @@
 
 .button {
     display: flex;
-    background-color: rgb(7, 153, 182);
+    background-color: rgb(10 82 96);
     border: none;
     color: white;
     height: 23px;
     border-radius: 5px;
+    align-items: center;
 }

@@ -3,7 +3,7 @@ import {
     FILTER_BY_LIFE_SPAN, FILTER_BY_HEIGHT, FILTER_BY_WEIGHT, FILTER_BY_NAME, GET_ALL_BREED,
     POST_BREED, FILTER_BY_BREEDGROUP, POST_USER, GET_USER, ORDER_BY_HEIGHT, ORDER_BY_WEIGHT,
     ORDER_BY_LIFE_SPAN, ORDER_BY_HEIGHT_REV, ORDER_BY_WEIGHT_REV, ORDER_BY_LIFE_SPAN_REV,
-    PUT_USER, GET_FAV, GET_CREATED, FILTER_BY_TEMPERAMENTS
+    PUT_USER, GET_FAV, GET_CREATED, FILTER_BY_TEMPERAMENTS, CLEAR_FAVORITE, CLEAR_CREATED, CLEAR_USER
 } from "./action_type";
 
 
@@ -91,7 +91,7 @@ export default function rootReducer(state = initialState, { type, payload }) {
                 while (cambio) {
                     cambio = false
                     for (let i = 0; i < desBreedHeight.length - 1; i++) {
-                        if (desBreedHeight[i].height > desBreedHeight[i + 1].height) {
+                        if (Number(desBreedHeight[i].height.split("-")[0]) > Number(desBreedHeight[i + 1].height.split("-")[0])) {
                             let aux = desBreedHeight[i + 1]
                             desBreedHeight[i + 1] = desBreedHeight[i]
                             desBreedHeight[i] = aux
@@ -105,6 +105,7 @@ export default function rootReducer(state = initialState, { type, payload }) {
                 ...state,
                 orderBreed: desBreedHeight
             }
+
         case ORDER_BY_WEIGHT:
             const orderBreeds = [...state.breedDogs]
             if (orderBreeds.length > 0) {
@@ -112,7 +113,7 @@ export default function rootReducer(state = initialState, { type, payload }) {
                 while (cambio) {
                     cambio = false
                     for (let i = 0; i < orderBreeds.length - 1; i++) {
-                        if (orderBreeds[i].weight > orderBreeds[i + 1].weight) {
+                        if (Number(orderBreeds[i].weight.split("-")[0]) > Number(orderBreeds[i + 1].weight.split("-")[0])) {
                             let aux = orderBreeds[i + 1]
                             orderBreeds[i + 1] = orderBreeds[i]
                             orderBreeds[i] = aux
@@ -171,33 +172,27 @@ export default function rootReducer(state = initialState, { type, payload }) {
         case GET_FAV:
             const allDogs = [...state.breedDogs]
             const favor = [...state.user.favorites]
-            if (favor.length) {
-                const toFav = []
-                favor.forEach((el) => {
-                    const isFav = allDogs.filter(e => e.id === Number(el))
-                    toFav.push(isFav[0])
-                })
+            const toFav = []
+            favor.forEach((el) => {
+                const isFav = allDogs.filter(e => e.id === Number(el))
+                toFav.push(isFav[0])
+            })
 
-                return {
-                    ...state,
-                    fav: toFav
-                }
+            return {
+                ...state,
+                fav: toFav
             }
+
         case GET_CREATED:
             const Dogs = [...state.breedDogs]
-            const creat = [...state.user.created]
-            if (creat.length) {
-                const creados = []
-                creat.forEach((el) => {
-                    const isCreated = Dogs.filter(e => e.id === Number(el))
-                    creados.push(isCreated[0])
-                })
-
+            const user = {...state.user}
+            const created = Dogs.filter(e =>Number(e.userId) === Number(user.id))           
                 return {
                     ...state,
-                    created: creados
+                    created: created
                 }
-            }
+            
+            
         case FILTER_BY_TEMPERAMENTS:
             const dogsDB = [...state.breedDogs]
             let array = []
@@ -208,7 +203,7 @@ export default function rootReducer(state = initialState, { type, payload }) {
                         array = [...array, el]
                     }
                 }
-                if(el.temperament){
+                if (el.temperament) {
                     const tempeArray = el.temperament.split(",")
                     const filtro = tempeArray.filter(elem => elem === payload)
                     if (filtro.length > 0) {
@@ -220,6 +215,21 @@ export default function rootReducer(state = initialState, { type, payload }) {
             return {
                 ...state,
                 filterBreed: array
+            }
+        case CLEAR_FAVORITE:
+            return {
+                ...state,
+                fav: []
+            }
+        case CLEAR_CREATED:
+            return {
+                ...state,
+                created: []
+            }
+        case CLEAR_USER:
+            return {
+                ...state,
+                user: {}
             }
 
         default:

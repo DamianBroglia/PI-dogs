@@ -1,8 +1,8 @@
 import Cards from "./Cards";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllBreed, getFav } from "../Redux/actions";
-import { useState } from 'react';
+import { getAllBreed, getCreated, getFav } from "../Redux/actions";
+
 
 
 export default function Home() {
@@ -11,9 +11,9 @@ export default function Home() {
     const user = useSelector(state => state.user)
 
     useEffect(() => {
-        dispatch(getAllBreed())
         if (user.favorites){
             dispatch(getFav())
+            dispatch(getCreated())
         }
     }, [])
 

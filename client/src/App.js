@@ -1,5 +1,6 @@
 import './App.css'
 import React, {  useEffect } from 'react'
+import { useDispatch } from 'react-redux';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import LoginForm from './Components/LoginForm';
 import Registrarse from "./Components/Registrarse"
@@ -18,17 +19,17 @@ import Search from './Components/Search';
 import Order from "./Components/Order"
 import NavOrder from "./Components/NavOrder"
 import FilterTemper from "./Components/FilterTempe"
-import { filterByName, postUser, getUser } from './Redux/actions';
+import { filterByName, postUser, getUser, getAllBreed } from './Redux/actions';
 
 
 
 
 function App() {
-  // const dispatch = useDispatch()
+   const dispatch = useDispatch()
 
-  // useEffect(() => {
-  //   dispatch(getAllBreed())
-  // }, [dispatch])
+  useEffect(() => {
+    dispatch(getAllBreed())
+  }, [])
 
   const location = useLocation()
 

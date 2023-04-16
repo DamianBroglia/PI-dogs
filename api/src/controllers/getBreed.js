@@ -12,6 +12,7 @@ const getBreed = async (req, res) => {
         const dogB = dbDogs.map(breed => {
             return {
                 id: breed.dataValues.id,
+                userId:breed.dataValues.userId,
                 image: breed.dataValues.image,
                 name: breed.dataValues.name,
                 height: breed.dataValues.height,
