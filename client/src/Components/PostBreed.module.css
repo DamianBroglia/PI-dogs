@@ -7,45 +7,58 @@
 
 .containerMedio{
     display: flex;
-    flex-direction: column;
-    margin-block: 22px;
-    background-color: rgb(20 43 50);
+    margin-top: 13px;
+    background-color: rgb(32 30 30);
     align-items: center;
-    border-radius: 51px;
-    padding-inline: 60px;
+    width: 1032px;
+    height: 266px;
+    padding-inline: -5px;
     padding-block: 28px;
     color: antiquewhite;
+    flex-wrap: wrap;
 }
 
 .containerMenor{
     display: flex;
-    justify-content: center;
-    margin: 2px;
+    margin-inline: 48px;
+    margin-bottom: 25px;
     padding: 4px;
     flex-direction: column;
-    align-items: center;
 }
 
 .label{
     display: flex;
-    justify-content: center;
+    font-size: 14px;
+    margin-left: 10px;
 }
 
-.unput{
+.input{
     display: flex;
+    width: 129px;
+    background-color: transparent;
+    border: solid;
+    color: rgb(0, 0, 0);
+    border-width: 1px;
+    height: 21px;
+    border-radius: 15px;
 }
 
 .button{
-    background-color: rgb(10 82 96);
-    margin-inline: 3px;
-    border: none;
-    width: 85px;
-    margin-top: 46px;
+    display: flex;
+    background-color: rgba(10,10,10, .7);
+    border: solid;
+    position: absolute;
+    border-width: 1px;
+    border-color: #0a5260;
+    top: 536px;
+    left: 600px;
+    color: white;
     height: 30px;
-    border-radius: 5px;
+    align-items: center;
 }
 .button:hover{
-    box-shadow: 0px 0px 9px 4px rgba(255, 255, 255, 0.6);
+    background-color: #0a5260;
+    box-shadow: 0px 0px 4px 3px rgb(46, 45, 45);
 }
 
 
@@ -64,4 +77,11 @@
     justify-content: center;
     flex-wrap: wrap;
     height: 0px;
+}
+
+.containerMedio2{
+    display: flex;
+    margin-top: -69px;
+    margin-left: 46px;
+    flex-wrap: wrap;
 }

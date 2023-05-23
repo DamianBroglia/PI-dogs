@@ -96,68 +96,70 @@ export default function PostBreed() {
                 handleSubmit(e)
             })}>
                 <div className={styles.containerMedio}>
-                    <div className={styles.containerMenor}>
-                        <label className={styles.label}>Nombre: </label>
-                        <input className={styles.input} type="text" name="name" placeholder="Nombre de la raza"
-                            onChange={(e) => handleInputChange(e)}></input>
-                    </div>
-                    <div className={styles.containerMenor}>
-                        <label className={styles.label}> Imagen: </label>
-                        <input className={styles.input} type="text" name="image" placeholder="Imagen"
-                            onChange={(e) => handleInputChange(e)}></input>
-                    </div>
-                    <div className={styles.containerMenor}>
-                        <label className={styles.label}>Altura: </label>
-                        <input className={styles.input} placeholder="Altura minima - Edad minima" type="text" name="height"
-                            onChange={(e) => handleInputChange(e)}></input>
+                    <div className={styles.containerMedio2}>
+                        <div className={styles.containerMenor}>
+                            <label className={styles.label}>Nombre: </label>
+                            <input className={styles.input} type="text" name="name" placeholder="Nombre de la raza"
+                                onChange={(e) => handleInputChange(e)}></input>
+                        </div>
+                        <div className={styles.containerMenor}>
+                            <label className={styles.label}> Imagen: </label>
+                            <input className={styles.input} type="text" name="image" placeholder="Imagen"
+                                onChange={(e) => handleInputChange(e)}></input>
+                        </div>
+                        <div className={styles.containerMenor}>
+                            <label className={styles.label}>Altura: </label>
+                            <input className={styles.input} placeholder="Altura minima - Edad minima" type="text" name="height"
+                                onChange={(e) => handleInputChange(e)}></input>
 
-                    </div>
-                    <div className={styles.containerMenor}>
-                        <label className={styles.label}>Peso: </label>
-                        <input className={styles.input} placeholder="Peso minimo - Peso maximo" type="text" name="weight"
-                            onChange={(e) => handleInputChange(e)}></input>
+                        </div>
+                        <div className={styles.containerMenor}>
+                            <label className={styles.label}>Peso: </label>
+                            <input className={styles.input} placeholder="Peso minimo - Peso maximo" type="text" name="weight"
+                                onChange={(e) => handleInputChange(e)}></input>
 
-                    </div>
-                    <div className={styles.containerMenor}>
-                        <label className={styles.label}>Esperanza de Vida: </label>
-                        <input className={styles.input} placeholder="Edad minima - Edad maxima" type="text" name="lifeSpan"
-                            onChange={(e) => handleInputChange(e)}></input>
+                        </div>
+                        <div className={styles.containerMenor}>
+                            <label className={styles.label}>Esperanza de Vida: </label>
+                            <input className={styles.input} placeholder="Edad minima - Edad maxima" type="text" name="lifeSpan"
+                                onChange={(e) => handleInputChange(e)}></input>
 
-                    </div>
-                    <div className={styles.containerMenor}>
-                        <label className={styles.label}>Origen: </label>
-                        <input className={styles.input} type="text" name="origin" placeholder="Origen"
-                            onChange={(e) => handleInputChange(e)}></input>
+                        </div>
+                        <div className={styles.containerMenor}>
+                            <label className={styles.label}>Origen: </label>
+                            <input className={styles.input} type="text" name="origin" placeholder="Origen"
+                                onChange={(e) => handleInputChange(e)}></input>
 
-                    </div>
-                    <div className={styles.containerMenor}>
-                        <label className={styles.label}>Tipo de raza: </label>
-                        <select name="breedGroup" defaultValue={"DEFAULT"} onChange={(e) => handleInputChange(e)}>
-                            <option value="DEFAULT" disabled >Grupo de Raza</option>
-                            <option value="Toy" >Toy</option>
-                            <option value="Hound">Hound</option>
-                            <option value="Terrier">Terrier</option>
-                            <option value="Working" >Working </option>
-                            <option value="Mixed">Mixed</option>
-                            <option value="Non-sporting">Non-sporting</option>
-                            <option value="Sporting">Sporting</option>
-                            <option value="Herding">Herding</option>
-                        </select>
-                    </div>
+                        </div>
+                        <div className={styles.containerMenor}>
+                            <label className={styles.label}>Tipo de raza: </label>
+                            <select className={styles.input} name="breedGroup" defaultValue={"DEFAULT"} onChange={(e) => handleInputChange(e)}>
+                                <option value="DEFAULT" disabled >Grupo de Raza</option>
+                                <option value="Toy" >Toy</option>
+                                <option value="Hound">Hound</option>
+                                <option value="Terrier">Terrier</option>
+                                <option value="Working" >Working </option>
+                                <option value="Mixed">Mixed</option>
+                                <option value="Non-sporting">Non-sporting</option>
+                                <option value="Sporting">Sporting</option>
+                                <option value="Herding">Herding</option>
+                            </select>
+                        </div>
+                        <div className={styles.containerMenor}>
+                            <label className={styles.label}>Temperamentos</label>
+                            <select className={styles.input} name="temperament" defaultValue={"DEFAULT"} onChange={(e) => handleInputChange(e)}>
+                                {temper.map(tem =>
+                                    <option key={tem.id} name={tem.name} value={tem.id}>{tem.name}</option>
 
-                    <label className={styles.label}>Temperamentos</label>
-                    <select name="temperament" defaultValue={"DEFAULT"} onChange={(e) => handleInputChange(e)}>
-                        {temper.map(tem =>
-                            <option key={tem.id} name={tem.name} value={tem.id}>{tem.name}</option>
-
-                        )}
-                    </select>
-                    <div className={styles.divTemper}>
-                        {temName.map((el) =>
-                            <p className={styles.tempeName}>{temper[el - 1].name}</p>
-                        )}
+                                )}
+                            </select>
+                        </div>
+                        <div className={styles.divTemper}>
+                            {temName.map((el) =>
+                                <p className={styles.tempeName}>{temper[el - 1].name}</p>
+                            )}
+                        </div>
                     </div>
-
 
                     <button className={styles.button} type="sudmit" >Crear Raza</button>
 

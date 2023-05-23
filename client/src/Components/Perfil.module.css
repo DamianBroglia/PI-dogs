@@ -7,13 +7,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: rgb(2, 61, 79);
-    border-radius: 13px;
+    background-color: rgb(32 30 30);
     margin-top: 8px;
-    height: 67px;
-    animation-name: perfil;
-    animation-duration: 3s;
-    animation-timing-function: ease;
+    height: 44px;
 }
 
 @keyframes perfil {
@@ -26,23 +22,23 @@
     flex-direction: column;
     align-items: center;
     margin-inline: 12px;
-    background-color: rgb(7, 153, 182);
+    background-color: rgb(16 16 16);
     padding-inline: 30px;
     border-radius: 15px;
-    height: 51px;
-    width: 36px;
-    border-radius: 15px;
+    height: 34px;
+    width: 31px;
+    border-radius: 6px;
     
 }
 .button{
     background: bottom;
     display: flex;
     width: 92px;
-    height: 51px;
+    background-color:transparent;
+    height: 34px;
     position: relative;
-    margin-left: 89px;
-    margin-top: -59px;
-    border-radius: 13px;
+    margin-left: 139px;
+    margin-top: -40px;
     border: none;
 }
 .name{
@@ -52,15 +48,16 @@
 .label{
     display: flex;
     color: antiquewhite;
+    font-size: 11px;
 }
 .h2{
     display: flex;
-    position: absolute;
-    font-size: 30px;
+    position: relative;
+    font-size: 20px;
     color: antiquewhite;
-    top: 79px;
+    top: -23px;
 }
 .div3{
     display: flex;
-    margin-left: -90px;
+    margin-left: -132px;
 }

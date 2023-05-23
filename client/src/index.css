@@ -5,9 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("https://media.istockphoto.com/id/489553794/photo/teal-and-white-doggy-tile-pattern-repeat-background.jpg?b=1&s=170667a&w=0&k=20&c=eRp5GKQcOPX_KnxDI8fTO44mEfGz3gJnHPOVA33jRQY=");
+  /* background-image: url("https://media.istockphoto.com/id/489553794/photo/teal-and-white-doggy-tile-pattern-repeat-background.jpg?b=1&s=170667a&w=0&k=20&c=eRp5GKQcOPX_KnxDI8fTO44mEfGz3gJnHPOVA33jRQY=");
 
-  background-attachment: fixed;
+  background-attachment: fixed; */
+  background-color: rgb(178, 178, 178);
 }
 
 code {

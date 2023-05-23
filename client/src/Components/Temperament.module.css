@@ -4,14 +4,11 @@
     height: 89px;
     border: none;
     margin: 11px;
-    background-color: rgba(26, 50, 58, .8);
-    /* margin-inline: 4px; */
+    background-color: rgb(32, 30, 30);
     padding: 30px;
-    /* padding-inline: 59px; */
     border-radius: 19px;
     font-size: 21px;
     font-family: sans-serif;
-    /* font-optical-sizing: auto;*/
     color: aliceblue;
 }
 
@@ -27,13 +24,15 @@
     flex-wrap: wrap;
     /* width: 445px; */
     margin-inline: 14px;
-    margin-top: 32px;
+    margin-top: 9px;
 }
 
 .nextPrev{
     display: flex;
-    background-color: rgb(26 50 58);
-    border: none;
+    background-color: transparent;
+    border: solid;
+    border-width: 1px;
+    border-color: black;
     color: white;
     height: 23px;
     border-radius: 5px;
@@ -44,7 +43,6 @@
     display: flex;
     margin-inline: 4px;
     font-size: 16px;
-    background-color: rgb(26 50 58);
     font-family: fantasy;
     padding-inline: 8px;
     height: 23px;
@@ -56,8 +54,8 @@
 .page{
     display: flex;
     align-items: center;
-    background-color: rgb(10 82 96);
+    background-color: rgb(32 30 30);
     padding-inline: 7px;
-    border-radius: 7px;
-    height: 36px;
+    top: 1404px;
+    height: 32px;
 }

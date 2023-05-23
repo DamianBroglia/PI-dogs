@@ -18,10 +18,10 @@ export default function SearchBar({ filterByName }) {
         }}>
             <input type="text"
                 className={styles.search}
-                placeholder="Raza"
+                placeholder="Buscar por raza"
                 value={breed}
                 onChange={e => setBreed(e.target.value)} />
-            <input type="submit" className={styles.button} value="Buscar" />
+            <input type="submit" className={styles.button} value="🔍" />
         </form>
     )
 }

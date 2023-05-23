@@ -51,30 +51,31 @@ export default function LoginForm({ getUser }) {
     }, [access]);
 
     return (
-        <div >
+        <div className={styles.back}>
+            <h1 className={styles.h1}>BIENVENIDO A DOGSAPP</h1>
             <form onSubmit={((e) => {
                 handleSubmit(e)
             })}>
                 <div className={styles.container}>
-                    <img className={styles.image} src="https://wallpapercave.com/wp/wp2247042.jpg"
-                        alt="background" />
-                    <div>
-                        <label className={styles.username}>Username:</label>
+                    {/* <img className={styles.image} src="https://wallpapercave.com/wp/wp2247042.jpg"
+                        alt="background" /> */}
+                    <div className={styles.container2}>
+                        <label className={styles.username}>Nombre:</label>
                         <input className={styles.input} type="text" name="username" placeholder="Username"
                             onChange={(e) => handleInputChange(e)}></input>
-                    </div>
-                    <div>
-                        <label className={styles.username}>Password:</label>
+                    
+                    
+                        <label className={styles.username}>Contraseña:</label>
                         <input className={styles.input} type="text"
                             name="password"
                             placeholder="Password"
                             onChange={(e) => handleInputChange(e)}></input>
-                    </div>
-                    <button className={styles.button} type="sudmit">Login</button>
-                    <p className={styles.p}>Si no tienes cuenta has click aquí</p>
+                    <button className={styles.button} type="sudmit"> INGRESAR</button>
+                    <p className={styles.p}>Si no tienes cuenta has click aquí: </p>
                     <Link to="/registrarse">
                         <label className={styles.label}>Registrarse</label>
                     </Link>
+                    </div>
                 </div>
             </form>
         </div>
