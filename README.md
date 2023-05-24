@@ -5,7 +5,7 @@
 ## **Descripción**
 
 Desarrollé una app con los conocimientos adquiridos en Henry.
-Dicha app consigue la infomacion de una api llamada TheDogsApi, y guarda infomracion en su propia base de datos
+Dicha app consigue la informacion de una api llamada TheDogsApi, y guarda informacion en su propia base de datos
 El tiempo que tuve para desarrolarla fueron 3 semanas.
 
 <br />
