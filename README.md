@@ -16,11 +16,11 @@ El tiempo que tuve para desarrolarla fueron 3 semanas.
 
 
 En la app se puede:
-- Loguerase o registrarse 
-- Ver la infomación de distintas razas de perros y una imagen de un ejemplar a travez de una card
+- Loguearse o registrarse 
+- Ver la información de distintas razas de perros y una imagen de un ejemplar a travez de una card
 
 Estas card se pueden:
-- Filtrar y ordenar por esperanza de vida, peso y altura.
+- Filtrar y ordenar por:  esperanza de vida, peso y altura.
 - Buscar por el nombre de la raza
 - Agregar a una lista de favoritos propia de cada usuario
 - Crear nuevas con nuevas razas de perros
